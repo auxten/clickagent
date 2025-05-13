@@ -1,2 +1,4 @@
 sentence-transformers>=4.1.0
 numpy<2.0.0
+chdb<4.0.0
+anthropic>=0.18.1
