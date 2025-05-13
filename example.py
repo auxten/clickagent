@@ -24,7 +24,6 @@ def main():
             "What are the features of Pinecone?",
             "What recommendations are there for choosing embedding models?",
             "How does similarity retrieval work in vector databases?",
-            "What is the relationship between RAG and vector databases?",
         ]
 
         # Process each question
@@ -34,7 +33,7 @@ def main():
 
             # Get relevant context using vector search
             print("\nRetrieving relevant context...")
-            context_messages = store.search_similar(question, limit=5)
+            context_messages = store.search_similar(question, limit=10)
 
             # Print context for reference
             print("\nRelevant context:")
