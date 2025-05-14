@@ -24,7 +24,7 @@ The RAG system consists of several key components:
 Install dependencies:
 
 ```bash
-pip install PyPDF2 chdb pandas numpy sentence-transformers anthropic
+pip install -r requirements.txt
 ```
 
 ## Environment Variables
@@ -32,6 +32,42 @@ pip install PyPDF2 chdb pandas numpy sentence-transformers anthropic
 - `ANTHROPIC_API_KEY`: Your Anthropic API key for Claude (required for question answering)
 
 ## Usage
+
+### Quick Demo
+
+```bash
+python example.py -d bitcoin.db tests/bitcoin.pdf
+python example.py -d bitcoin.db -q "What is Bitcoin?"
+```
+Output:
+```
+(clickagent) ~/Codes/go/src/github.com/auxten/clickagent (main ✗) ./example.py -d bitcoin.db -q "bitcoin papar author and time"
+
+==================================================
+Question: bitcoin papar author and time
+
+Retrieving relevant context...
+
+Relevant context:
+- PDF Document (2025-01-01 00:00:00): Bitcoin: A Peer-to-Peer Electronic Cash System
+Satoshi Nakamoto
+satoshin@gmx.com
+www.bitcoin.org
+Abstract.
+- PDF Document (2025-01-01 00:00:00): Dai, "b-money," http://www.weidai.com/bmoney.txt, 1998.
+- PDF Document (2025-01-01 00:00:00): In our case, it is CPU time and electricity that is expended.
+- PDF Document (2025-01-01 00:00:00): We assume the sender is an attacker  
+who wants to make the recipient believe he paid him for a while, then switch it to pay back to  
+himself after some time has passed.
+
+.....
+
+Answer:
+Based on the provided context, the author of the Bitcoin whitepaper is Satoshi Nakamoto. The whitepaper is titled "Bitcoin: A Peer-to-Peer Electronic Cash System" and the email address satoshin@gmx.com is listed, along with the website www.bitcoin.org.
+
+However, there is no specific date or time mentioned for when the whitepaper was written or published.
+==================================================
+```
 
 ### Basic Commands
 
